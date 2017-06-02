@@ -3,8 +3,9 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>香港莎莎官网 - 正品美妆海淘商城,化妆品护肤品海外购首选</title>
+		
 	</head>
-	<body onload="testF()">
+	<body>
 		<header>
 			<div id="welcomex">
 				<span>
@@ -28,7 +29,7 @@
 		        </li>
 		        <li>
 		        	<p><img src="img/shouye-img/31.jpg" /></p>
-		        	<p>我的购物车</a></p>
+		        	<p>我的购物车</p>
 		        	<ul id="sub2">
 		        		<li>购物车中还没有商品</li>
 		        		<li>快去挑选心爱的商品吧</li>
@@ -72,46 +73,64 @@
 	      			
 			</ul>
 		</header>
-		<div id="logo">
-			<a href="index.html"><img src="img/guanwang-img/9.png" /></a>
+		
+		
+		<div id="nav">
+			<p>
+				<a href="index.html"><img src="img/guanwang-img/9.png" /></a>
+			</p>
 		</div>
+		
 		<div id="contentx">
 			<div>
-				<img src="img/shouye-img/69.jpg" />
+				<img src="img/shouye-img/73.jpg" />
 			</div>
 			<div id="formx">
-				<div>
-					<p>
-						<span>用户登录</span>
-						<span>还没有莎莎网？<a href="#">立即注册</a></span>
-					</p>
-					<form>
-						<input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱/手机" id="txt"/><span id="msg"></span>
-						<input type="password" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;填写密码"  id="pwd" /><span id="sp1"></span><br />
-						<input type="text" placeholder="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;填写验证码"  id="yzm" onblur="sum1()"/><span id="sp2"onclick="testF(),sum1()"></span><span id="sp3"></span><br/><br /><br /><br />
-						<input type="checkbox"  id="checkx"/><span id="spanx">记住我</span><span><a>忘记密码？</a></span>
-						<input type="submit"  value="登录" id="btnx"onclick="denglu666()"/>
-				 	</form>
-					<div id="sanfang">
-					<span>第三方账号登录</span>
-					<span><a href="https://graph.qq.com/oauth/show?which=Login&display=pc&response_type=code&client_id=101195125&redirect_uri=http://www.sasa.com/qqcallback-callback.html&state=37d2cf184001baa4eb3c322a48821985&scope="><img src="img/shouye-img/70.jpg" />QQ登录</a></span>
-					<span><a href="https://api.weibo.com/oauth2/authorize?client_id=1847277018&redirect_uri=http%3A%2F%2Fwww.sasa.com%2Fwbcallback-callback.html&response_type=code"><img src="img/shouye-img/71.jpg" />微博登录</a></span>
-					<span><a href="https://auth.alipay.com/login/express.htm?goto=https%3A%2F%2Fmemberexprod.alipay.com%3A443%2Fauthorize%2FuserAuthQuickLoginAction.htm%3Fe_i_i_d%3D949dcaeb53c9af65403e0a1afce57059"><img src="img/shouye-img/72.jpg" />支付宝登录</a></span>
-				</div>
-					
-				</div>
-				
+				<p>
+					<span>用户注册</span>
+					<span>还没有莎莎账号?</span>
+					<span><a href="denglu1.0.html">立即登录</a></span>
+				</p>
+				<form>
+					<input type="text" placeholder="请输入用户名/邮箱/手机号" id="txt"/><span id="msg"></span>
+					<input type="password" placeholder="请输入密码6-16位数字和密码的整合" id="pwd"/><span id="sp1"></span>
+					<input type="password" placeholder="再次填写密码" id="repwd"/><span id="sp2"></span>
+					<input type="text" placeholder="填写验证码" id="yzm"/><span id="code">NDSP</span><span id="spz">看不清？换一张</span><div id="clearx"></div><span id="spx"></span>
+					<input type="checkbox" id="txt5"/><span id="spy"><a href="#">同意莎莎网使用条款和隐私保护政策</a></span><br />
+					<input type="button"  value="注册" id="btnx"/>
+					<!--<a id="btnx">注册</a>-->
+				</form>
 			</div>
-			
 		</div>
 		
-		
-		
-		
+						
+						
 		
 		
 	</body>
 </html>
-<link href="css/denglu1.css" rel="stylesheet" type="text/css"/>
+<link href="css/zhuce1.css" rel="stylesheet" type="text/css"  />
+<!--<script src="../js/ajax.js"></script>-->
 <script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/denglu1.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/zhuce1.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+	$(function(){
+		//if(reg1.test($("#txt").val())&&reg.test($("#pwd").val())&&($("#pwd").val()==$("#repwd").val())&&($("#yzm").val()==$("#code").html())){
+			$("#btnx").click(function(){//注册
+				$.post("../php/zhuce1.0.php",
+						{
+							"userName":$("#txt").val(),
+							"userPass":$("#pwd").val()
+						},
+						function(data){
+							//alert(data);
+							alert("注册成功！");			
+						}
+				)
+				
+		   });
+		//}
+		
+   });
+</script>

@@ -76,7 +76,7 @@ var _left3 = document.getElementById("time3");
 var _left4 = document.getElementById("time4");
 var limited=document.getElementById("limited");
 function calcLeftTime(){
-	var d3 = new Date(2017,5,3);
+	var d3 = new Date(2017,5,10);
 	var d4 = new Date();
 	var d6 = new Date(2017,6,"+d4.getDate()+",1);
 	var d7 = new Date(2017,6,"+d4.getDate()+",2);
