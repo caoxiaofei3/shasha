@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-size: 16px;
   width: 1300px;
@@ -19,7 +20,7 @@ img {
 
 #Fixed div:nth-child(1) {
   width: 42px;
-  height: 342px;
+  height: 118px;
   background: #4c4c4c;
   position: fixed;
   top: 0;
@@ -27,15 +28,9 @@ img {
   color: #fff;
   font-size: 12px; }
   #Fixed div:nth-child(1) p:nth-child(1) {
-    margin-top: 130px;
-    margin-left: 15px;
-    width: 16px;
-    height: 130px; }
-  #Fixed div:nth-child(1) p:nth-child(2) {
     margin-top: 30px;
-    margin-left: 10px;
-    position: relative; }
-    #Fixed div:nth-child(1) p:nth-child(2) span {
+    margin-left: 10px; }
+    #Fixed div:nth-child(1) p:nth-child(1) span {
       width: 100px;
       height: 40px;
       line-height: 40px;
@@ -51,11 +46,11 @@ img {
 
 #Fixed div:nth-child(2) {
   width: 42px;
-  height: 169px;
+  height: 150px;
   background: #4c4c4c;
   border-top: solid 1px white;
   position: fixed;
-  top: 342px;
+  top: 120px;
   right: 0;
   color: #fff;
   text-align: center;
@@ -80,12 +75,12 @@ img {
 
 #Fixed div:nth-child(3) {
   width: 42px;
-  height: 390px;
+  height: 380px;
   background: #4c4c4c;
   border-top: solid 1px white;
   position: fixed;
   right: 0;
-  top: 510px;
+  top: 268px;
   color: #fff;
   margin-left: 12px;
   font-size: 12px; }
@@ -223,7 +218,7 @@ img {
 
 #Fixed4 {
   position: absolute;
-  left: 1000px;
+  left: 800px;
   top: 200px;
   width: 392px;
   height: 274px;
@@ -599,35 +594,35 @@ header {
   #wrap-bottom ul:hover a {
     color: #ed3f7c; }
 
-#emptyx {
+#emptyx, #emptyx2 {
   width: 1194px;
   height: 120px;
   background: #f2f2f2; }
-  #emptyx li {
+  #emptyx li, #emptyx2 li {
     float: left;
     margin-right: 47px;
     width: 190px;
     height: 60px;
     padding-top: 30px;
     padding-bottom: 30px; }
-    #emptyx li p:nth-child(1) {
+    #emptyx li p:nth-child(1), #emptyx2 li p:nth-child(1) {
       width: 40px;
       height: 60px;
       float: left;
       line-height: 60px;
       text-align: center; }
-      #emptyx li p:nth-child(1) img {
+      #emptyx li p:nth-child(1) img, #emptyx2 li p:nth-child(1) img {
         width: 30px;
         height: 30px; }
-    #emptyx li p:nth-child(2) {
+    #emptyx li p:nth-child(2), #emptyx2 li p:nth-child(2) {
       width: 140px;
       height: 60px;
       float: left;
       font-size: 14px; }
-      #emptyx li p:nth-child(2) span:nth-child(1) {
+      #emptyx li p:nth-child(2) span:nth-child(1), #emptyx2 li p:nth-child(2) span:nth-child(1) {
         font-size: 16px;
         font-weight: bolder; }
-      #emptyx li p:nth-child(2) span:nth-child(3) {
+      #emptyx li p:nth-child(2) span:nth-child(3), #emptyx2 li p:nth-child(2) span:nth-child(3) {
         color: #999; }
 
 #mustcheck {
@@ -692,11 +687,11 @@ header {
           width: 100px;
           height: 60px; }
         #mustcheck div:nth-child(2) dl dd p:nth-child(4):hover a {
-          color: #c53265; }
+          background-color: #c53265; }
 
 #limitedoffer {
   width: 1194px;
-  min-height: 2029px;
+  min-height: 2085px;
   background: #f2f2f2; }
   #limitedoffer div:nth-child(1) {
     height: 26px;
@@ -762,8 +757,7 @@ header {
           width: 100%;
           height: 30px;
           position: absolute;
-          margin-top: 25px;
-          background: red; }
+          margin-top: 25px; }
           #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(4) span:nth-child(1) {
             font-size: 20px;
             display: block;
@@ -792,5 +786,173 @@ header {
           width: 480px;
           height: 32px;
           position: absolute;
-          bottom: 0;
-          background: blue; }
+          bottom: 0; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(5) span:nth-child(1) {
+            width: 100px;
+            height: 13px;
+            line-height: 13px;
+            margin-top: 19px;
+            float: left;
+            color: #999; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(5) span:nth-child(2) a {
+            width: 92px;
+            height: 32px;
+            display: block;
+            float: right;
+            line-height: 32px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #e93b78;
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 1px; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(5) span:nth-child(2):hover a {
+            background-color: #c53265; }
+  #limitedoffer div:nth-child(4) {
+    width: 1194px;
+    height: 56px;
+    float: left;
+    margin-top: 20px;
+    text-align: center; }
+    #limitedoffer div:nth-child(4) a:nth-child(1) {
+      display: block;
+      width: 200px;
+      height: 36px;
+      line-height: 36px;
+      font-size: 14px;
+      color: #fff;
+      margin: 0 auto;
+      background: #000; }
+
+#top5 {
+  width: 1194px;
+  min-height: 714px;
+  background: #f2f2f2; }
+  #top5 div:nth-child(1) img {
+    height: 26px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 34px;
+    margin-top: 38px;
+    margin-bottom: 26px; }
+  #top5 div:nth-child(2) {
+    height: 571px;
+    width: 1194px; }
+    #top5 div:nth-child(2) dl {
+      height: 571px;
+      width: 382px;
+      background: red;
+      float: left; }
+      #top5 div:nth-child(2) dl dt {
+        width: 100%;
+        height: 64px;
+        line-height: 64px;
+        text-align: center;
+        font-size: 22px;
+        color: #111;
+        float: left;
+        border-top: 2px solid #fc3f83;
+        background: #fff;
+        font-weight: bolder; }
+      #top5 div:nth-child(2) dl dd {
+        float: left;
+        width: 100%;
+        height: 100px;
+        border-top: 1px solid #eeeeee;
+        background: #fff;
+        position: relative;
+        z-index: 99; }
+        #top5 div:nth-child(2) dl dd p:nth-child(1) {
+          float: left;
+          width: 100px;
+          height: 100px; }
+        #top5 div:nth-child(2) dl dd p:nth-child(2) {
+          float: left;
+          width: 282px;
+          height: 100px; }
+          #top5 div:nth-child(2) dl dd p:nth-child(2) span:nth-child(1) a {
+            color: #222;
+            font-size: 15px;
+            font-family: "微软雅黑"; }
+          #top5 div:nth-child(2) dl dd p:nth-child(2) span:nth-child(4) {
+            color: #fc3f83;
+            font-size: 16px;
+            line-height: 20px; }
+          #top5 div:nth-child(2) dl dd p:nth-child(2) span:nth-child(5) {
+            margin-left: 5px;
+            color: #999;
+            height: 21px;
+            line-height: 21px;
+            font-size: 12px;
+            text-decoration: line-through; }
+          #top5 div:nth-child(2) dl dd p:nth-child(2) span:nth-child(6) {
+            float: right;
+            line-height: 20px;
+            color: #999;
+            font-size: 11.3px;
+            margin-right: 10px; }
+    #top5 div:nth-child(2) dl:nth-child(1) {
+      margin-right: 24px; }
+    #top5 div:nth-child(2) dl:nth-child(2) {
+      margin-right: 24px; }
+
+#emptyx2 {
+  background: white; }
+
+#cp {
+  width: 1194px;
+  padding-left: 36px;
+  height: 280px;
+  background: #fff;
+  font-size: 12px; }
+  #cp div:nth-child(1) {
+    width: 836px;
+    height: 280px;
+    float: left; }
+    #cp div:nth-child(1) ul {
+      width: 160px;
+      padding-top: 30px;
+      height: 130px;
+      float: left; }
+      #cp div:nth-child(1) ul li {
+        width: 160px;
+        height: 22px;
+        font-size: 12px; }
+        #cp div:nth-child(1) ul li a {
+          color: gray; }
+      #cp div:nth-child(1) ul li:nth-child(1) {
+        font-weight: bolder; }
+        #cp div:nth-child(1) ul li:nth-child(1) a {
+          color: black; }
+    #cp div:nth-child(1) p {
+      width: 836px;
+      height: 60px; }
+  #cp div:nth-child(2) {
+    width: 240px;
+    height: 220px;
+    padding-top: 60px;
+    padding-left: 50px;
+    float: left; }
+    #cp div:nth-child(2) p {
+      width: 100px;
+      height: 160px;
+      float: left;
+      margin-right: 20px; }
+      #cp div:nth-child(2) p img {
+        width: 100px;
+        height: 100px; }
+
+#foot {
+  width: 1194px;
+  height: 102px;
+  background: #000;
+  font-size: 12px;
+  color: #fff;
+  font-family: 'Microsoft Yahei', Helvetica, Arial, STXihei, SimSun, sans-serif; }
+  #foot p:nth-child(1) {
+    padding-top: 26px;
+    padding-bottom: 26px; }
+  #foot p:nth-child(2) {
+    padding-top: 14px;
+    line-height: 12px;
+    color: #fff; }

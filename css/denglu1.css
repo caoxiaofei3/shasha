@@ -1,0 +1,9 @@
+#Fixed div:nth-child(1) {
+  width: 42px;
+  height: 118px;
+  background: #4c4c4c;
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: #fff;
+  font-size: 12px; }

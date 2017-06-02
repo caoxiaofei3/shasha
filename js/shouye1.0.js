@@ -69,16 +69,18 @@ s();
 
 
 //倒计时
-var _left0 = document.getElementById("left-time0");
-var _left1 = document.getElementById("left-time1");
-var _left2 = document.getElementById("left-time2");
-var _left3 = document.getElementById("left-time3");
+var _left0 = document.getElementById("time0");
+var _left1 = document.getElementById("time1");
+var _left2 = document.getElementById("time2");
+var _left3 = document.getElementById("time3");
+var _left4 = document.getElementById("time4");
 var limited=document.getElementById("limited");
 function calcLeftTime(){
-	var d3 = new Date(2017,2,20,9);
+	var d3 = new Date(2017,5,3);
 	var d4 = new Date();
-	var d6 = new Date(2017,2,"+d4.getDate()+",9);
-	var d7 = new Date(2017,2,"+d4.getDate()+",16);
+	var d6 = new Date(2017,6,"+d4.getDate()+",1);
+	var d7 = new Date(2017,6,"+d4.getDate()+",2);
+	var d8 = new Date(2017,6,"+d4.getDate()+",3);
 //	var d6 = new Date(2017,2,11,9);
 //	var d7 = new Date(2017,2,11,16);
 	var leftTime = parseInt((d3.getTime()-d4.getTime())/1000);
@@ -90,6 +92,7 @@ function calcLeftTime(){
 		_left1.innerHTML ="剩余"+" "+ changeNum(hours)+": "+changeNum(minutes)+": "+changeNum(seconds);
 		_left2.innerHTML ="剩余"+" "+ changeNum(hours)+": "+changeNum(minutes)+": "+changeNum(seconds);
 		_left3.innerHTML ="剩余"+" "+ changeNum(hours)+": "+changeNum(minutes)+": "+changeNum(seconds);
+		_left4.innerHTML ="剩余"+" "+ changeNum(hours)+": "+changeNum(minutes)+": "+changeNum(seconds);
 		if((d4.getHours()<=d6.getHours())&&(d4.getHours()>=d7.getHours())){
 			limited.style.display="none";
 		}
@@ -99,6 +102,7 @@ function calcLeftTime(){
 		_left1.innerHTML = "计时已结束";
 		_left2.innerHTML = "计时已结束";
 		_left3.innerHTML = "计时已结束";
+		_left4.innerHTML = "计时已结束";
 
 	}
 }
@@ -111,3 +115,75 @@ var t1 = setInterval(function(){
 function changeNum(num){
 	return num>=10?num:"0"+num;
 }
+
+//楼层索引
+    $(function(){
+    	$(window).scroll(function () {
+	       if($(window).scrollTop()<=0){		       		
+	       		$("#Fixed2").css({position:"fixed",top:840,left:0,"z-index":9999});
+	       }else{
+	       		$("#Fixed2").css({position:"fixed",top:100,left:0});
+	       }
+		});
+		function getId(str){
+			return document.getElementById(str)
+		}
+
+		var oLix=getId("Fixed2").getElementsByTagName("li");
+		window.onscroll = function(){
+			 scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			 clientHeight=document.documentElement.clientHeight || document.body.clientHeight;
+			for (var i = 0; i < oLix.length; i++) {
+				oLix[i].index=i;
+				oLix[i].onmouseover= function(){
+					for(var j=0;j<oLix.length;j++){
+						oLix[j].className = "";
+					}
+					this.className = "activem";
+					if(i==3){
+						document.body.scrollTop=scrollTop;
+					}else{
+						document.body.scrollTop=(scrollTop+clientHeight)*i/4;
+					}
+					
+				}
+			}
+		}
+    })
+
+//右侧栏动画
+	$(function(){
+		$("#Fixed div p").on("mouseover",function(){
+			$("#Fixed div p span").stop().animate(
+									{   
+										
+										"left": "-100px"
+									}, 1000
+								);
+		});
+		$("#Fixed div p").on("mouseout",function(){
+			$("#Fixed div p span").stop().animate(
+									{
+										
+										"left": "-300px"
+									}, 1000
+								);
+		});
+		
+		
+		$("#Fixedx").click(function(){
+			$("#Fixed5").css({"display": "block"});
+		});
+		$("#Fixedy").click(function(){
+			$("#Fixed5").css({"display": "none"});
+		});
+				
+		//全部品牌下拉菜单*
+		$("#textX").mouseenter(function(){
+			$("#Fixed4").css({"display":"block"});
+		});
+		$("#Fixed4").mouseleave(function(){
+			$(this).css({"display":"none"});
+		});
+		
+    });		
