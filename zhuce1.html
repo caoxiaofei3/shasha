@@ -88,16 +88,16 @@
 			<div id="formx">
 				<p>
 					<span>用户注册</span>
-					<span>还没有莎莎账号?</span>
-					<span><a href="denglu1.0.html">立即登录</a></span>
+					<span>已有莎莎账号?</span>
+					<span><a href="denglu1.html">立即登录</a></span>
 				</p>
-				<form>
-					<input type="text" placeholder="请输入用户名/邮箱/手机号" id="txt"/><span id="msg"></span>
-					<input type="password" placeholder="请输入密码6-16位数字和密码的整合" id="pwd"/><span id="sp1"></span>
+				<form action="php/regSave.php" method="post">
+					<input  type="text" name="uesrname" placeholder="请输入用户名/邮箱/手机号" id="txt"/><span id="msg"></span>
+					<input type="password" name="uesrpass" placeholder="请输入密码6-16位数字和密码的整合" id="pwd"/><span id="sp1"></span>
 					<input type="password" placeholder="再次填写密码" id="repwd"/><span id="sp2"></span>
 					<input type="text" placeholder="填写验证码" id="yzm"/><span id="code">NDSP</span><span id="spz">看不清？换一张</span><div id="clearx"></div><span id="spx"></span>
 					<input type="checkbox" id="txt5"/><span id="spy"><a href="#">同意莎莎网使用条款和隐私保护政策</a></span><br />
-					<input type="button"  value="注册" id="btnx"/>
+					<input type="submit"  value="注册" id="btnx"/>
 					<!--<a id="btnx">注册</a>-->
 				</form>
 			</div>
@@ -115,10 +115,9 @@
 <script src="js/zhuce1.js"></script>
 
 <script type="text/javascript" charset="utf-8">
-	$(function(){
-		//if(reg1.test($("#txt").val())&&reg.test($("#pwd").val())&&($("#pwd").val()==$("#repwd").val())&&($("#yzm").val()==$("#code").html())){
+/*(function(){
 			$("#btnx").click(function(){//注册
-				$.post("../php/zhuce1.0.php",
+				$.post("php/zhuce1.php",
 						{
 							"userName":$("#txt").val(),
 							"userPass":$("#pwd").val()
@@ -131,6 +130,20 @@
 				
 		   });
 		//}
-		
-   });
+		 });
+*/
+/*
+$(function(){
+	$("#txt").blur(function(){
+		$.get("php/checkUser.php",{id:$("#txt").val()},function(data){
+		if(data=="1"){
+				$("#msg").html("此用户名可以使用，赶紧注册吧");
+			}else{
+				$("#msg").html("此用户名已存在，请重新选择");
+			}			
+		});		
+	});
+	
+});
+*/
 </script>

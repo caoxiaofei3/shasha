@@ -35,9 +35,37 @@ $(function(){
 		
 	});
 	
+	$("#btnx").click(function(event){//注册
+		var evt = event||wondow.event;
+		if(a&b&c&d){
+			//alert("正确");
+		}else{
+			alert("用户名或密码等有错，请重新输入");
+			event.preventDefault();
+		}
+	});
+	
+	$("#txt").blur(function(event){
+		if(a){
+		var evt = event||wondow.event;
+		$.get("php/checkUser.php",{id:$("#txt").val()},function(data){
+		if(data=="1"){
+				$("#msg").html("此用户名可以使用，赶紧注册吧");
+				d = true;
+			}else{
+				$("#msg").html("此用户名已存在，请重新选择");
+				d = false;
+			}			
+		});		
+	}
+	});
+	  
 });
 
-
+var  a = false;
+var  b = false;
+var  c = false;
+var  d = false;
 var txt = document.getElementById("txt");
 var msg = document.getElementById("msg");
 var flag = 0;
@@ -69,7 +97,7 @@ txt.onblur = function(){
 //				
 //			}
 //	});
-    $(function(){
+/*   $(function(){
 		$("#txt").blur(function(){//后台验证用户名
 			$.get("../php/checkUser.php",{"userName":$("#txt").val()},function(data){
 				console.log(data);
@@ -81,17 +109,19 @@ txt.onblur = function(){
 			});
 		});
 	});
-
-//	if(reg1.test(oText)||reg2.test(oText)||reg3.test(oText)){//正则验证
-//		msg.innerHTML = "用户名/邮箱/手机号格式正确";
-//	}else{
-//		if(oText){
-//			msg.innerHTML = "用户名/邮箱/手机号格式错误，请输入用户名/邮箱/手机号";
-//			txt.value="";
-//		}else{
-//			msg.innerHTML = "请输入用户名/邮箱/手机号";
-//		}
-//	}
+*/
+	if(reg1.test(oText)||reg2.test(oText)||reg3.test(oText)){//正则验证
+		msg.innerHTML = "用户名/邮箱/手机号格式正确";
+		 a = true;
+	}else{
+		a = false;
+		if(oText){
+			msg.innerHTML = "用户名/邮箱/手机号格式错误，请输入用户名/邮箱/手机号";
+			txt.value="";
+		}else{
+			msg.innerHTML = "请输入用户名/邮箱/手机号";
+		}
+	}
     
 
 }
@@ -153,7 +183,9 @@ pwd.onblur=function(){
 repwd.onblur=function(){
 	if((pwd.value==repwd.value)&&(pwd.value)){
 		sp2.innerHTML="输入密码正确";
+		b = true;
 	}else{
+		b = false;
 		if(repwd.value){
 			sp2.innerHTML="两次密码不一致，请重新输入密码";
 			repwd.value="";
@@ -176,9 +208,11 @@ var Yzm=document.getElementById("yzm");
 var Spx=document.getElementById("spx");
 
 Yzm.onblur=function(){
-	if(Yzm.value==Code.innerHTML){
+	if(Yzm.value==Code.innerHTML.toLowerCase()){
 		Spx.innerHTML="验证码正确";
+		c = true;
 	}else{
+		c = false;
 		if(Yzm.value){
 			if(Yzm.value.length<4){
 				Spx.innerHTML="验证码位数过少，请点击验证码再次输入";

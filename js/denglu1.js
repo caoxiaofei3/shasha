@@ -3,6 +3,7 @@
 var a=false;
 var b=false;
 var c=false;
+var d=false;
 document.getElementById("txt").onblur=function(){
         var reg=/^1[34578]\d{9}$/;
        var str=document.getElementById("txt").value;
@@ -60,11 +61,32 @@ document.getElementById("txt").onblur=function(){
 		    document.getElementById("sp3").innerHTML="×";
 		   }
 	}
+	$(function(){
+    $("#btnx").click(function(){
+        $.post("php/login.php",{user:$("#txt").val(),userPass:$("#pwd").val()},function(data){
+            if(data=="true"){
+                //登录成功
+                //存cookie
+                
+                //跳到主页
+               // location.href="index.html";
+                d=true;
+            }else{
+                //登录失败
+                d=false;
+                //alert("亲，登录失败，用户名或者密码错了");
+            }
+        });     
+    });
+    
+});
 function denglu666(){
-    if(a&b&c){
-        alert("正确");
+    if(a&b&c&d){
+        //alert("正确");
+        location.href="index.html";
 	}else{
-	    alert("出账号或者密码格式有误");
+	   
+	    alert("亲，登录失败，用户名或者密码错了");
 	}
 	
 }

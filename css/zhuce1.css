@@ -1,0 +1,229 @@
+body {
+  width: 1300px;
+  height: 100%;
+  position: relative; }
+
+* {
+  padding: 0px;
+  margin: 0px; }
+
+ul, li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+img {
+  border: none; }
+
+header {
+  width: 100%;
+  height: 34px;
+  background: #f2f2f2;
+  color: #000;
+  line-height: 34px;
+  font-size: 12px;
+  position: relative; }
+
+#welcomex {
+  float: left;
+  margin-left: 30px;
+  margin-right: 200px; }
+
+#welcomex a {
+  color: #f00; }
+
+#menux {
+  float: left;
+  margin-left: 200px; }
+
+#menux li {
+  float: left;
+  width: 84px; }
+
+#menux li p:nth-child(1) {
+  float: left;
+  margin-right: 2px; }
+
+#menux li p:nth-child(2) {
+  float: left; }
+
+#menux li:hover {
+  font-weight: bolder; }
+
+#menux li:nth-child(1) {
+  position: relative; }
+
+#sub1 {
+  display: none;
+  width: 84px;
+  height: 200px;
+  text-align: center;
+  font-weight: normal;
+  background: #fff; }
+
+#menux li:nth-child(1):hover #sub1 {
+  position: absolute;
+  top: 34px;
+  left: 0px;
+  display: block; }
+
+#menux li:nth-child(2) {
+  position: relative; }
+
+#sub2 {
+  display: none;
+  width: 250px;
+  height: 100px;
+  font-weight: normal;
+  position: absolute;
+  top: 34px;
+  left: -100px;
+  background: #fff; }
+  #sub2 li {
+    width: 150px; }
+
+#menux li:nth-child(2):hover #sub2 {
+  display: block; }
+
+#menux li:nth-child(4), #menux li:nth-child(6) {
+  padding-left: 4px;
+  width: 68px; }
+
+#menux li:nth-child(5) {
+  padding-left: 10px;
+  width: 60px; }
+
+#menux li:nth-child(7) {
+  width: 90px;
+  position: relative; }
+
+#menux li:nth-child(8) {
+  position: relative; }
+
+#sub3, #sub4 {
+  width: 100px;
+  height: 100px;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 34px; }
+  #sub3 li, #sub4 li {
+    width: 100px;
+    height: 100px; }
+    #sub3 li img, #sub4 li img {
+      width: 100%;
+      height: 100%; }
+
+#menux li:nth-child(7):hover #sub3 {
+  display: block; }
+
+#menux li:nth-child(8):hover #sub4 {
+  display: block;
+  left: -100px; }
+
+#menux a {
+  color: #000; }
+
+#nav {
+  width: 100%;
+  height: 100px;
+  margin-top: 30px; }
+  #nav p {
+    float: left;
+    margin-left: 80px; }
+
+#contentx {
+  width: 1030px;
+  height: 500px;
+  margin-left: 80px; }
+  #contentx div:nth-child(1) {
+    width: 600px;
+    height: 500px;
+    float: left; }
+    #contentx div:nth-child(1) img {
+      width: 600px;
+      height: 354px;
+      margin-top: 73px; }
+  #contentx div:nth-child(2) {
+    width: 395px;
+    height: 500px;
+    float: left;
+    color: gray;
+    padding-left: 30px; }
+    #contentx div:nth-child(2) p {
+      height: 40px;
+      margin-bottom: 25px;
+      margin-top: 25px;
+      width: 395px; }
+      #contentx div:nth-child(2) p span:nth-child(1) {
+        line-height: 40px;
+        font-size: 20px;
+        margin-right: 140px; }
+      #contentx div:nth-child(2) p span:nth-child(2) {
+        line-height: 40px;
+        font-size: 12px; }
+      #contentx div:nth-child(2) p span:nth-child(3) {
+        line-height: 40px;
+        font-size: 12px; }
+        #contentx div:nth-child(2) p span:nth-child(3) a {
+          color: #ec3e7d; }
+    #contentx div:nth-child(2) form {
+      height: 410px;
+      width: 395px; }
+      #contentx div:nth-child(2) form input {
+        width: 355px;
+        height: 30px; }
+      #contentx div:nth-child(2) form span {
+        font-size: 12px;
+        width: 355px;
+        height: 12px;
+        display: block;
+        margin-bottom: 20px; }
+  #contentx #formx {
+    border: solid 1px gray; }
+  #contentx #yzm {
+    width: 130px;
+    height: 30px;
+    float: left; }
+  #contentx #code {
+    background: url(../img/shouye-img/77.jpg) no-repeat 0 0;
+    display: block;
+    width: 70px;
+    height: 30px;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #000;
+    text-align: center;
+    line-height: 30px;
+    float: left; }
+  #contentx #spz {
+    display: block;
+    line-height: 30px;
+    height: 30px;
+    width: 185px;
+    background: #fff;
+    float: left; }
+  #contentx #clearx {
+    clear: both;
+    height: 0;
+    overflow: hidden; }
+  #contentx #txt5 {
+    width: 10px;
+    height: 10px;
+    float: left; }
+  #contentx #spy {
+    background: #fff;
+    width: 345px;
+    height: 30px;
+    float: left; }
+    #contentx #spy a {
+      color: gray; }
+  #contentx #btnx {
+    background: #ec3e7d;
+    color: #fff;
+    border: none;
+    width: 355px;
+    height: 30px;
+    display: block;
+    float: left; }
