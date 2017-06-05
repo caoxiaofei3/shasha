@@ -26,7 +26,8 @@ img {
   top: 0;
   right: 0;
   color: #fff;
-  font-size: 12px; }
+  font-size: 12px;
+  z-index: 999; }
   #Fixed div:nth-child(1) p:nth-child(1) {
     margin-top: 30px;
     margin-left: 10px; }
@@ -50,7 +51,7 @@ img {
   background: #4c4c4c;
   border-top: solid 1px white;
   position: fixed;
-  top: 120px;
+  top: 118px;
   right: 0;
   color: #fff;
   text-align: center;
@@ -860,8 +861,7 @@ header {
         height: 100px;
         border-top: 1px solid #eeeeee;
         background: #fff;
-        position: relative;
-        z-index: 99; }
+        position: relative; }
         #top5 div:nth-child(2) dl dd p:nth-child(1) {
           float: left;
           width: 100px;
