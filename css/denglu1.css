@@ -37,7 +37,8 @@ header {
 #welcomex {
   float: left;
   margin-left: 30px;
-  margin-right: 200px; }
+  margin-right: 200px;
+  display: block; }
 
 #welcomex a {
   color: #f00; }

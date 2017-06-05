@@ -62,31 +62,36 @@ document.getElementById("txt").onblur=function(){
 		   }
 	}
 	$(function(){
+	removeCookie("userName");
     $("#btnx").click(function(){
         $.post("php/login.php",{user:$("#txt").val(),userPass:$("#pwd").val()},function(data){
             if(data=="true"){
                 //登录成功
-                //存cookie
-                
-                //跳到主页
-               // location.href="index.html";
+                //2、保存cookie（把用户名保存在cookie里）
+        saveCookie("userName",$("#txt").val(),5);
                 d=true;
+                if(a&b&c&d){
+        alert("正确");
+        //alert(document.cookie);
+        if(getCookie("userName")!=""){
+            $("#welcomex").css("display","none");
+$("#welcomey").css({"display":"block","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"});
+        
+        $("#cook").html(getCookie("userName"));
+        location.href="index.html"; 
+        }
+          
+    }else{ 
+        alert("亲，登录失败，用户名或者密码错了");
+    }    
             }else{
                 //登录失败
                 d=false;
-                //alert("亲，登录失败，用户名或者密码错了");
+        alert("亲，登录失败，用户名或者密码错了");
+     
             }
-        });     
+        }); 
+    
     });
     
 });
-function denglu666(){
-    if(a&b&c&d){
-        //alert("正确");
-        location.href="index.html";
-	}else{
-	   
-	    alert("亲，登录失败，用户名或者密码错了");
-	}
-	
-}

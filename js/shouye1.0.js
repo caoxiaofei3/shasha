@@ -187,3 +187,15 @@ function changeNum(num){
 		});
 		
     });		
+    
+
+
+$(function(){
+	if(getCookie("userName")!=""){
+		$("#welcomex").css("display","none");
+$("#welcomey").css({"display":"block","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"});
+        
+        $("#cook").html(getCookie("userName"));
+	}
+        document.close(removeCookie("userName"));
+});
