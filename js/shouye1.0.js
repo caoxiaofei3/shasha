@@ -9,7 +9,7 @@
 	function autoPlay(){
 		timer = setInterval(function(){
 			m++;
-			if(m==9){
+			if(m==8){
 				m =0;
 			}
 			for(var i=0;i<oLi.length;i++){
@@ -197,4 +197,8 @@ $("#welcomey").css({"display":"block","margin-left":"30px","margin-right":"200px
         $("#cook").html(getCookie("userName"));
 	}
         ////document.close(removeCookie("userName"));
+        $("#zhuxiao").click(function(){
+    	$("#welcomex").css("display","block");
+ 	$("#welcomey").css({"display":"none","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"}); 
+    });
 });

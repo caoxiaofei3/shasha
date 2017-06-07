@@ -123,14 +123,74 @@ $(function(){
 			});
 		});	
 });
-//商品列表
-    ajax("php/goods.json",function(res){
+//商品列表从josn获取
+/*    ajax("php/goods.json",function(res){
     	var data=JSON.parse(res);
     	var oLen=data.length;
     	//var oUl=document.getElementById("container");
     	console.log(oLen);
     	for(var i=0;i<oLen;i++){
-	  		$("#container").append('<li><p><a href="#"><img src='+data[i].Url+'/></a></p><p><span>'+data[i].price+'</span><span>'+data[i].Name1+'</span></p><p>'+data[i].Name2+'</p><p>'+data[i].Name3+'</p><p>'+data[i].Name4+'</p><p><a href="#">'+data[i].Name4+'</a></p></li>');
+	  		$("#container").append('<li><p><a href="#"><img src='+data[i].Url+'/></a></p><p><span>'+data[i].price+'</span><span>'+data[i].Name1+'</span></p><p>'+data[i].Name2+'</p><p>'+data[i].Name3+'</p><p>'+data[i].Name4+'</p><p><a href="#">'+data[i].Name5+'</a></p></li>');
     	}
     	
     });
+*/
+//从后台拿到所有收据
+/*
+$.get("php/getGoodsList.php", function(data){
+	var data=eval(data);
+    console.log(data);
+   var oLen=data.length;
+    for(var i=0;i<oLen;i++){
+	  		$("#container").append('<li><p><a href="#"><img src='+data[i].goodsImg+'/></a></p><p><span>'+data[i].goodsPrice+'</span><span>'+data[i].beiyong1+'</span></p><p>'+data[i].goodsName+'</p><p>'+data[i].goodsType+'</p><p>'+data[i].goodsDesc+'</p><p><a href="#">'+data[i].beiyong2+'</a></p></li>');
+    	}
+});
+*/
+//从后台得到想要的数据
+
+$("#suosuo").click(function(){	
+		$.get("php/getGoodsInfo.php",{goodsId:$("#int01").val()},function(data){	
+	var data=eval('('+data+')');
+	console.log(data);
+	console.log(data.goodsImg);
+	
+	$("#container").append('<li><p><a href="#"><img src="'+data.goodsImg+'"/></a></p><p><span>'+data.goodsPrice+'</span><span>'+data.beiyong1+'</span></p><p>'+data.goodsName+'</p><p>'+data.goodsType+'</p><p>'+data.goodsDesc+'</p><p><a href="#">'+data.beiyong2+'</a></p></li>');
+    	
+		});		 
+	 
+	});
+
+
+
+
+
+
+
+
+$(function(){
+	if(getCookie("userName")!=""){
+		$("#welcomex").css("display","none");
+$("#welcomey").css({"display":"block","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"}); 
+        $("#cook").html(getCookie("userName"));
+	}
+    $("#zhuxiao").click(function(){
+    	$("#welcomex").css("display","block");
+ 	$("#welcomey").css({"display":"none","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"}); 
+    });
+    ////document.close(removeCookie("userName"));
+});
+
+//给ul绑定一个click事件，但是对li起作用。
+	//此事件委托：把给子元素li绑定的click事件委托给父元素ul。
+$(function(){
+	
+	$("#container").delegate("li","click",function(){
+	//console.log($(this).html());
+	
+	
+	
+	
+	
+	});
+	
+});
