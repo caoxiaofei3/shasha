@@ -195,10 +195,33 @@ $(function(){
 		$("#welcomex").css("display","none");
 $("#welcomey").css({"display":"block","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"}); 
         $("#cook").html(getCookie("userName"));
+    //购物车数量    
+       
+        
+        
+        
 	}
         ////document.close(removeCookie("userName"));
         $("#zhuxiao").click(function(){
+        	removeCookie("userName");
     	$("#welcomex").css("display","block");
  	$("#welcomey").css({"display":"none","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"}); 
     });
 });
+
+
+//加购物车的数量
+$(function(){
+	if(getCookie("userName")!=""){
+	$.get("php/getShoppingCart.php",{vipName:getCookie("userName")},function(data){
+	var data=eval(data);
+    //console.log(data);
+   var oLen=data.length;
+    //2、保存cookie（把用户名保存在cookie里）
+        saveCookie("oLen",oLen,5);
+});
+    //alert(getCookie("oLen"));
+    $("#oLen").html(getCookie("oLen"));
+    }
+});
+

@@ -120,3 +120,50 @@ function changN(str){
 		}
 	}
 }
+//cookie用户名
+$(function(){
+	if(getCookie("userName")!=""){
+		$("#welcomex").css("display","none");
+$("#welcomey").css({"display":"block","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"}); 
+        $("#cook").html(getCookie("userName"));
+	}
+        ////document.close(removeCookie("userName"));
+        $("#zhuxiao").click(function(){
+    	$("#welcomex").css("display","block");
+ 	$("#welcomey").css({"display":"none","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"}); 
+    });
+});
+
+//得到后台的购物车数据
+$(function(){
+	$.get("php/getShoppingCart.php",{vipName:getCookie("userName")},function(data){
+	var data=eval(data);
+    console.log(data);
+   var oLen=data.length;
+   if(oLen!=0){
+   	    for(var i=0;i<oLen;i++){
+	  		$("#cont").append('<li><img src="'+data[i].goodsImg+'" class="gwc0"/><span class="gwc1"><em>'+data[i].goodsName+'</em><em>'+data[i].goodsDesc+'</em><em>直降</em><em>直降活动</em></span><span class="gwc2">￥'+data[i].goodsPrice+'</span><span class="gwc3"><input type="button" value="-" class="minus" /><input type="text" value="'+data[i].goodsSum+'" class="num" /><input type="button" value="+" class="plus"/></span><span class="gwc4"></span><span class="gwc5"><input type="button" value="删除" class="dete"/></span></li>');
+    	}
+   }else{
+   	$("#conx").attr("display","none");
+   	$("#conx11").attr("display","block");
+   }
+    
+});
+});
+ 
+
+//加购物车的数量
+$(function(){
+	if(getCookie("userName")!=""){
+	$.get("php/getShoppingCart.php",{vipName:getCookie("userName")},function(data){
+	var data=eval(data);
+    //console.log(data);
+   var oLen=data.length;
+    //2、保存cookie（把用户名保存在cookie里）
+        saveCookie("oLen",oLen,5);
+});
+    //alert(getCookie("oLen"));
+    $("#oLen").html(getCookie("oLen"));
+    }
+});
