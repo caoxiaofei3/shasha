@@ -46,80 +46,7 @@ $(function(){
 		
     });		
       
-function changN(str){
-	var minus =str.getElementsByClassName("minus")[0];
-	var num =str.getElementsByClassName("num")[0];
-	var plus =str.getElementsByClassName("plus")[0];
-	var price1 =str.getElementsByClassName("gwc2")[0];
-	var price2 =str.getElementsByClassName("gwc4")[0];
-	var oUl=document.getElementById("cont");
-	var count=document.getElementById("count");
-    var totalprice=document.getElementById("totalprice");
-    
-	 //加号点击
-	 plus.onclick=function(){
-	 	var n = parseInt(num.value);
-	 	if(n<5&&n>0){
-	 		num.value = n+1;
-	 		//console.log(minus.disabled);
-	 		minus.disabled = false;
-	 		minus.style.cursor = "pointer";
-	 		if(num.value==99){
-	 			plus.disabled = true;
-	 			plus.style.cursor = "not-allowed";
-	 		  }
-	 		}else{
-	 			plus.disabled = true;
-	 			plus.style.cursor = "not-allowed";
-	 		}
-			//console.log(price1.innerHTML);
-			price2.innerHTML=num.value*(price1.innerHTML)+".0";
-			//console.log(price2.innerHTML);
-			if(oUl.getElementsByClassName("num")[0].value){
-		  	    count.innerHTML=(oUl.getElementsByClassName("num")[0].value)*1;
-		 		totalprice.innerHTML=(oUl.getElementsByClassName("gwc4")[0].innerHTML)*1+".0";
-			}
-			if(oUl.getElementsByClassName("num")[0].value&&oUl.getElementsByClassName("num")[1].value){
-		  	    count.innerHTML=(oUl.getElementsByClassName("num")[0].value)*1+(oUl.getElementsByClassName("num")[1].value)*1;
-		 		totalprice.innerHTML=(oUl.getElementsByClassName("gwc4")[0].innerHTML)*1+(oUl.getElementsByClassName("gwc4")[1].innerHTML)*1+".0";
-			}
-			if(oUl.getElementsByClassName("num")[0].value&&oUl.getElementsByClassName("num")[1].value&&oUl.getElementsByClassName("num")[2]){
-		  	    count.innerHTML=(oUl.getElementsByClassName("num")[0].value)*1+(oUl.getElementsByClassName("num")[1].value)*1+(oUl.getElementsByClassName("num")[2].value)*1;
-		 		totalprice.innerHTML=(oUl.getElementsByClassName("gwc4")[0].innerHTML)*1+(oUl.getElementsByClassName("gwc4")[1].innerHTML)*1+(oUl.getElementsByClassName("gwc4")[2].innerHTML)*1+".0";
-			}
-	  	    //console.log(count);
-	  	    //console.log(totalprice);
-	 }
-	 //减号效果
-	 minus.onclick = function(){
-	 	var n = parseInt(num.value);
-	 	if(n>1&&n<6){
-	 		num.value = n-1;
-	 		plus.disabled = false;
-	 		plus.style.cursor = "pointer";
-	 		if(num.value==1){
-	 			minus.disabled = true;
-	 			minus.style.cursor = "not-allowed"
-	 		}
-	 	}else{
-	 		minus.disabled = true;
-	 		minus.style.cursor = "not-allowed"
-	 	}
-	 	price2.innerHTML=num.value*price1.innerHTML;
-	 	if(oUl.getElementsByClassName("num")[0].value){
-	  	    count.innerHTML=(oUl.getElementsByClassName("num")[0].value)*1;
-	 		totalprice.innerHTML=(oUl.getElementsByClassName("gwc4")[0].innerHTML)*1+".0";
-		}
-		if(oUl.getElementsByClassName("num")[0].value&&oUl.getElementsByClassName("num")[1].value){
-	  	    count.innerHTML=(oUl.getElementsByClassName("num")[0].value)*1+(oUl.getElementsByClassName("num")[1].value)*1;
-	 		totalprice.innerHTML=(oUl.getElementsByClassName("gwc4")[0].innerHTML)*1+(oUl.getElementsByClassName("gwc4")[1].innerHTML)*1+".0";
-		}
-		if(oUl.getElementsByClassName("num")[0].value&&oUl.getElementsByClassName("num")[1].value&&oUl.getElementsByClassName("num")[2]){
-	  	    count.innerHTML=(oUl.getElementsByClassName("num")[0].value)*1+(oUl.getElementsByClassName("num")[1].value)*1+(oUl.getElementsByClassName("num")[2].value)*1;
-	 		totalprice.innerHTML=(oUl.getElementsByClassName("gwc4")[0].innerHTML)*1+(oUl.getElementsByClassName("gwc4")[1].innerHTML)*1+(oUl.getElementsByClassName("gwc4")[2].innerHTML)*1+".0";
-		}
-	}
-}
+
 //cookie用户名
 $(function(){
 	if(getCookie("userName")!=""){
@@ -135,23 +62,90 @@ $("#welcomey").css({"display":"block","margin-left":"30px","margin-right":"200px
 });
 
 //得到后台的购物车数据
+var heji=0;
 $(function(){
+	
 	$.get("php/getShoppingCart.php",{vipName:getCookie("userName")},function(data){
 	var data=eval(data);
     console.log(data);
    var oLen=data.length;
    if(oLen!=0){
    	    for(var i=0;i<oLen;i++){
-	  		$("#cont").append('<li><img src="'+data[i].goodsImg+'" class="gwc0"/><span class="gwc1"><em>'+data[i].goodsName+'</em><em>'+data[i].goodsDesc+'</em><em>直降</em><em>直降活动</em></span><span class="gwc2">￥'+data[i].goodsPrice+'</span><span class="gwc3"><input type="button" value="-" class="minus" /><input type="text" value="'+data[i].goodsSum+'" class="num" /><input type="button" value="+" class="plus"/></span><span class="gwc4"></span><span class="gwc5"><input type="button" value="删除" class="dete"/></span></li>');
+	  		$("#cont").append('<li class="Oli"><img src="'+data[i].goodsImg+'" class="gwc0"/><span class="gwc1"><em>'+data[i].goodsName+'</em><em>'+data[i].goodsDesc+'</em><em>直降</em><em>直降活动</em></span><span class="gwc2">'+data[i].goodsPrice+'</span><span class="gwc3"><input type="button" value="-" class="minus" /><input type="text" value="'+data[i].goodsSum+'" class="num"id="'+data[i].goodsId+'" /><input type="button" value="+" class="plus"/></span><span class="gwc4">￥'+data[i].goodsPrice*data[i].goodsSum+'</span><span class="gwc5"><input type="button" value="删除" class="dete" id="'+data[i].goodsId+'"/></span></li>');
+	  		heji=heji+data[i].goodsPrice*data[i].goodsSum;
     	}
+   	    $("#totalprice").html("￥"+heji);
    }else{
    	$("#conx").attr("display","none");
    	$("#conx11").attr("display","block");
    }
-    
+   //同步变异步
+	setTimeout(function(){
+		console.log("这是changN函数的异步操作代码");
+		changN();
+	},1000); 
 });
 });
- 
+//购物车加减
+function changN(){
+	$(".minus").live("click", function() {
+			var spanzhi=$(this).next().val();
+		if(spanzhi>0){
+			spanzhi=parseInt(spanzhi)-1;
+			$(this).next().val(spanzhi);
+		}
+		$(this).parent().next().html(spanzhi*parseInt($(this).parent().prev().html()));		
+	    heji-=parseInt($(this).parent().prev().html());
+	    $("#totalprice").html("￥"+heji);
+	    
+	    $.get("php/addShoppingCart.php",{vipName:getCookie("userName"),goodsId:$(this).next().attr("id"),goodsCount:-1},function(data){
+	  		if(data=="1"){
+	  			//alert("修改成功");
+	  		}
+	  	
+		});
+	    
+	});
+		
+$(".plus").live("click", function() {
+  		var spanzhi=$(this).prev().val();		
+			spanzhi=parseInt(spanzhi)+1;
+			$(this).prev().val(spanzhi);
+			$(this).parent().next().html(spanzhi*parseInt($(this).parent().prev().html()));
+	    heji+=parseInt($(this).parent().prev().html());
+	    $("#totalprice").html("￥"+heji);
+	    
+	     $.get("php/addShoppingCart.php",{vipName:getCookie("userName"),goodsId:$(this).prev().attr("id"),goodsCount:1},function(data){
+	  		if(data=="1"){
+	  			//alert("修改成功");
+	  		}
+	  	
+		});
+})
+
+$(".dete").live("click",function(){
+			$.get("php/deleteGoods.php", {vipName:getCookie("userName"),goodsId:$(this).attr("id")},function(data){
+			if(data==true){
+				//var that=this;
+				//$(this).parents(".Oli").remove();
+				//$(this).parents(".Oli").css("display","none");
+				//$(this).parent().css("display","none");
+				//heji-=parseInt($(this).parent().prev().html());
+				//$("#totalprice").html("￥"+heji);
+				location.href="gouwuche1.html";
+				
+			}
+		})
+	})
+
+
+
+
+
+
+
+
+}
 
 //加购物车的数量
 $(function(){
@@ -165,5 +159,9 @@ $(function(){
 });
     //alert(getCookie("oLen"));
     $("#oLen").html(getCookie("oLen"));
+    $("#count").html(getCookie("oLen")+"件");
     }
 });
+
+
+

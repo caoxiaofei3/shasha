@@ -331,10 +331,140 @@ header {
       border-left: solid 1px #ccc;
       border-bottom: solid 1px #ccc; }
 
-#contx {
+#limitedoffer {
   width: 1194px;
-  height: 1000px;
-  background: red; }
+  min-height: 4000px;
+  background: #f2f2f2; }
+  #limitedoffer div:nth-child(1) {
+    height: 26px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    margin-top: 34px;
+    float: left; }
+  #limitedoffer div:nth-child(2) {
+    font-size: 22px;
+    text-align: center;
+    font-family: "Microsoft Yahei",Helvetica,Arial,STXihei,SimSun,sans-serif; }
+  #limitedoffer div:nth-child(3) dl {
+    width: 1194px;
+    height: 360px;
+    float: left;
+    margin-top: 26px; }
+    #limitedoffer div:nth-child(3) dl dt {
+      float: left;
+      height: 360px;
+      width: 640px; }
+    #limitedoffer div:nth-child(3) dl dd {
+      float: left;
+      height: 360px;
+      width: 554px;
+      background: pink; }
+      #limitedoffer div:nth-child(3) dl dd div:nth-child(1) {
+        width: 480px;
+        height: 280px;
+        margin: 40px 40px 0 0;
+        float: right;
+        position: relative; }
+        #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(1) {
+          height: 24px;
+          overflow: hidden;
+          padding: 0 10px;
+          background-color: #414141;
+          color: #fff;
+          line-height: 24px;
+          text-align: center;
+          font-size: 13px;
+          display: inline-block; }
+        #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(2) {
+          width: 100%;
+          height: 120px;
+          font-size: 17px;
+          line-height: 30px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          overflow: hidden;
+          color: #222; }
+        #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(3) {
+          width: 100%;
+          height: 20px;
+          position: absolute;
+          margin-bottom: 44px;
+          left: 0;
+          font-size: 13px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          color: #666; }
+        #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(4) {
+          width: 100%;
+          height: 30px;
+          position: absolute;
+          margin-top: 25px; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(4) span:nth-child(1) {
+            font-size: 20px;
+            display: block;
+            float: left;
+            margin-top: -4px;
+            font-weight: 600;
+            color: #fc3f83; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(4) span:nth-child(2) {
+            font-weight: 600;
+            color: #fc3f83;
+            font-size: 32px;
+            font-family: "Arial";
+            line-height: 30px;
+            float: left; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(4) span:nth-child(3) {
+            color: #999;
+            float: left;
+            margin-top: 9px;
+            margin-left: 7px;
+            position: relative;
+            line-height: 23px;
+            height: 23px;
+            font-size: 13px;
+            text-decoration: line-through; }
+        #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(5) {
+          width: 480px;
+          height: 32px;
+          position: absolute;
+          bottom: 0; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(5) span:nth-child(1) {
+            width: 100px;
+            height: 13px;
+            line-height: 13px;
+            margin-top: 19px;
+            float: left;
+            color: #999; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(5) span:nth-child(2) a {
+            width: 92px;
+            height: 32px;
+            display: block;
+            float: right;
+            line-height: 32px;
+            text-align: center;
+            cursor: pointer;
+            background-color: #e93b78;
+            color: #fff;
+            font-size: 16px;
+            letter-spacing: 1px; }
+          #limitedoffer div:nth-child(3) dl dd div:nth-child(1) p:nth-child(5) span:nth-child(2):hover a {
+            background-color: #c53265; }
+  #limitedoffer div:nth-child(4) {
+    width: 1194px;
+    height: 56px;
+    float: left;
+    margin-top: 20px;
+    text-align: center; }
+    #limitedoffer div:nth-child(4) a:nth-child(1) {
+      display: block;
+      width: 200px;
+      height: 36px;
+      line-height: 36px;
+      font-size: 14px;
+      color: #fff;
+      margin: 0 auto;
+      background: #000; }
 
 #emptyx2 {
   width: 1194px;

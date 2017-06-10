@@ -3,7 +3,15 @@ body {
   font-size: 16px;
   width: 1300px;
   height: 100%;
-  position: relative; }
+  position: relative;
+  font: 14px/22px 'Microsoft Yahei',Helvetica,Arial,STXihei,SimSun,sans-serif;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  font-stretch: normal;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: 'Microsoft Yahei', Helvetica, Arial, STXihei, SimSun, sans-serif; }
 
 * {
   padding: 0px;

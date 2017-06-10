@@ -142,7 +142,7 @@ $.get("php/getGoodsList.php", function(data){
     console.log(data);
    var oLen=data.length;
     for(var i=0;i<oLen;i++){
-	  		$("#container").append('<li id="'+data[i].goodsId+'"><p><a href="chanpinxiangqing1.html"><img src="'+data[i].goodsImg+'"/></a></p><p><span>'+data[i].goodsPrice+'</span><span>'+data[i].beiyong1+'</span></p><p>'+data[i].goodsName+'</p><p>'+data[i].goodsType+'</p><p>'+data[i].goodsDesc+'</p><p><a href="gouwuche1.html">'+data[i].beiyong2+'</a></p></li>');
+	  		$("#container").append('<li id="'+data[i].goodsId+'"><p><a href="chanpinxiangqing1.html"><img src="'+data[i].goodsImg+'"/></a></p><p><span>'+data[i].goodsPrice+'</span><span>'+data[i].beiyong1+'</span></p><p>'+data[i].goodsName+'</p><p>'+data[i].goodsType+'</p><p>'+data[i].goodsDesc+'</p><p style="cursor:pointer" ><a class="abcd"id="'+data[i].goodsId+'">'+data[i].beiyong2+'</a></p></li>');
     	}
 });
 
@@ -179,6 +179,24 @@ $("#welcomey").css({"display":"block","margin-left":"30px","margin-right":"200px
  	$("#welcomey").css({"display":"none","margin-left":"30px","margin-right":"200px","width":"200px","float":"left"}); 
     });
     ////document.close(removeCookie("userName"));
+    $(".abcd").live("click", function() {
+	  if(getCookie("userName")!=""){
+	  	$.get("php/addShoppingCart.php",{vipName:getCookie("userName"),goodsId:$(this).attr("id"),goodsCount:1},function(data){
+	  		if(data=="1"){
+	  			var t = window.confirm("添加成功，是否跳转到购物车？");
+	    if(t){
+		window.location.href="gouwuche1.html";
+	    }
+	  		}else{
+	  			alert("添加失败");
+	  		}
+	  	
+		});	
+	  }else{
+	  	alert("请您先登录!");
+	  }
+    });
+	
 });
 
 //给ul绑定一个click事件，但是对li起作用。

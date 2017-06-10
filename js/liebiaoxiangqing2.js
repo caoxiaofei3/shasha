@@ -60,7 +60,7 @@ var _left9 = document.getElementById("time9");
 
 var limited=document.getElementById("limited");
 function calcLeftTime(){
-	var d3 = new Date(2017,5,10);
+	var d3 = new Date(2017,5,15);
 	var d4 = new Date();
 	var d6 = new Date(2017,6,"+d4.getDate()+",1);
 	var d7 = new Date(2017,6,"+d4.getDate()+",2);
